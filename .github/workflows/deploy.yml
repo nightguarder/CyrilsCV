@@ -43,7 +43,8 @@ jobs:
         
       - name: Build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          NODE_ENV: production
+          VITE_BASE_PATH: '/CyrilsCV'
         run: pnpm run build
 
       - name: Upload artifacts

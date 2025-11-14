@@ -33,6 +33,9 @@ const config = {
 			strict: true,
 			trailingSlash: 'always',
 		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? (process.env.VITE_BASE_PATH || '/CyrilsCV') : ''
+		},
 	},
 	extensions: ['.svelte', '.svx', '.md']
 };
