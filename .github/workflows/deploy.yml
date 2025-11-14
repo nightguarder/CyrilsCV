@@ -43,7 +43,7 @@ jobs:
         
       - name: Build
         env:
-          BASE_PATH: '/CyrilsCV'
+          BASE_PATH: /${{ github.event.repository.name }}
         run: |
           pnpm run build
 
