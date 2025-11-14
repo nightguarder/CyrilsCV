@@ -17,6 +17,7 @@ env:
   PNPM_VERSION: 10
 
 jobs:
+  # https://github.com/pnpm/action-setup
   cache-and-install:
     runs-on: ubuntu-latest
 
@@ -36,14 +37,17 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
   build-site:
+    needs: cache-and-install
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
+        #Install dependencies with pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
