@@ -1,7 +1,7 @@
 <script>
 </script>
 <nav>
-    <a href="/">Home</a>
+    <a href=".">Home</a>
     <a href="/about">About</a>
     <a href="/frontmatter">Frontmatter</a>
 </nav>
