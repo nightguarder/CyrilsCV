@@ -36,6 +36,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
+        # Install dependencies with pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
   build-site:
     needs: cache-and-install
@@ -43,10 +46,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-        #Install dependencies with pnpm
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
 
       - name: Build
         env:
