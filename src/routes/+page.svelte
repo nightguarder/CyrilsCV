@@ -1,5 +1,4 @@
 <script>
-    
 </script>
 <nav>
     <a href="/">Home</a>
