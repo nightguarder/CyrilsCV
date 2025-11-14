@@ -5,3 +5,5 @@
 // https://svelte.dev/docs/kit/adapter-static
 export const prerender = true;
 
+// Handle base path for static adapter
+export const trailingSlash = 'always';

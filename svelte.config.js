@@ -31,11 +31,11 @@ const config = {
 			fallback: '404.html',
 			precompress: false,
 			strict: true,
-			trailingSlash: 'always',
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? (process.env.VITE_BASE_PATH || '/CyrilsCV') : ''
-		},
+			base: process.env.VITE_BASE_PATH || '',
+			relative: false
+		}
 	},
 	extensions: ['.svelte', '.svx', '.md']
 };
