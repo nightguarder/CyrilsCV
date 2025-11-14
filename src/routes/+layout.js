@@ -4,4 +4,5 @@
 // We're using adapter static so try to prerender all pages
 // https://svelte.dev/docs/kit/adapter-static
 export const prerender = true;
-export const trailingSlash = 'always';
+// Github Pages requires trailing slashes for proper routing
+export const trailingSlash = 'always'; 

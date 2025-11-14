@@ -1,0 +1,18 @@
+# About me
+
+This is my **about** page written in *markdown*.
+
+## Skills
+- Svelte
+- JavaScript
+- TypeScript
+
+## Experience
+My previous work experience includes various projects in web development and software engineering.
+
+## Contact
+Feel free to reach out to me at [cyril@example.com](mailto:cyril@example.com).
+
+## Social Media
+- [GitHub](https://github.com/cyrils)
+- [YouTube](https://youtube.com/@cyrils)

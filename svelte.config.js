@@ -1,12 +1,28 @@
 import { mdsvex } from 'mdsvex';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
 /** @type {import('@sveltejs/kit').Config} */
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const path_to_layout = join(__dirname, "src/lib/layouts/MDLayout.svelte");
+
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: [vitePreprocess(), mdsvex()],
+	preprocess: [vitePreprocess(), mdsvex({
+		extensions: ['.md', '.svx'],
+		highlight: {
+			theme: 'github-dark'
+		},
+		layout: {
+			// Default layout for all markdown files
+			//https://mdsvex.pngwn.io/docs#layout
+			_: path_to_layout
+		}
+	})],
 	kit: {
 		// https://svelte.dev/docs/kit/adapter-static
 		// Using adapter-static (SSG) to deploy to GitHub Pages
