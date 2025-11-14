@@ -15,9 +15,8 @@ const config = {
 			assets: 'build',
 			fallback: '404.html',
 			precompress: false,
-			strict: true
+			strict: true,
 		}),
-		trailingSlash: 'always' // GitHub Pages compatible
 	},
 	extensions: ['.svelte', '.svx']
 };

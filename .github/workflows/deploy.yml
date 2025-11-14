@@ -37,6 +37,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         
@@ -44,6 +45,7 @@ jobs:
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: pnpm run build
+
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v4
         with:
@@ -54,7 +56,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build-project
+    needs: build-project # wait for build to complete
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
