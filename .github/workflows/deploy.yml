@@ -47,7 +47,7 @@ jobs:
           echo "The BASE_PATH for the next step will be: /${{ github.event.repository.name }}"
 
       - name: Build
-        run: BASE_PATH="/${{ github.event.repository.name }}" pnpm run build
+        run: BASE_PATH=/${{ github.event.repository.name }} pnpm run build
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v4
