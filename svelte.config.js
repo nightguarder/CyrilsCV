@@ -13,7 +13,6 @@ const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex({
-		extensions: ['.md', '.svx'],
 		highlight: {
 			theme: 'github-dark'
 		},
@@ -32,9 +31,10 @@ const config = {
 			fallback: '404.html',
 			precompress: false,
 			strict: true,
+			trailingSlash: 'always',
 		}),
 	},
-	extensions: ['.svelte', '.svx']
+	extensions: ['.svelte', '.svx', '.md']
 };
 
 export default config;
