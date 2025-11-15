@@ -16,7 +16,7 @@ env:
   NODE_VERSION: 20
   PNPM_VERSION: 10
   NODE_ENV: production
-  BASE_PATH: /${{ github.event.repository.name }}
+  BASE_PATH: '/CyrilsCV'
 
 jobs:
   # Only one job!
@@ -43,11 +43,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         
-      - name: Set BASE_PATH
-        run: echo "BASE_PATH=/CyrilsCV" >> $GITHUB_ENV
-
       - name: Build
-        run: NODE_ENV=production BASE_PATH=${{ env.BASE_PATH }} pnpm run build
+        run: NODE_ENV=production pnpm run build
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v4
