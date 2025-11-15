@@ -16,13 +16,14 @@ env:
   NODE_VERSION: 20
   PNPM_VERSION: 10
   NODE_ENV: production
-  BASE_PATH: '/CyrilsCV'
 
 jobs:
   # Only one job!
   # https://github.com/pnpm/action-setup
   build-project:
     runs-on: ubuntu-latest
+    env:
+      BASE_PATH: '/CyrilsCV'
 
     steps:
       - name: Checkout

@@ -1,9 +1,10 @@
 <script>
+    import { resolve } from '$app/paths';
 </script>
 <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/frontmatter">Frontmatter</a>
+    <a href={resolve('/')}>Home</a>
+    <a href={resolve('/about')}>About</a>
+    <a href={resolve('/frontmatter')}>Frontmatter</a>
 </nav>
 
 <h1>Welcome to SvelteKit</h1>
